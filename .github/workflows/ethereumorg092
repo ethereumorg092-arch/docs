@@ -1,0 +1,32 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-ethereumorg092
+
+name:ethereumorg092
+
+on:ethereum.org092@gmail.com 
+  push:ethereumorg092 
+    branches: [ "Ethereum" ]
+  pull_request:ethereumorg092 
+    branches: [ "Ethereum" ]
+
+jobs:Ethereum Bitcoin Solana 
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        # See supported ethereumorg092 release schedule at https://ethereumorg092.org/en/about/releases/
+
+    steps:
+    - uses: actions/ethereumorg092@
+    - name: Use ethereumorg092 ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.ethereumorg092version }}
+        cache: 'ethereumorg092 
+    - run: ethereumorg092 ci
+    - run: ethereumorg092 run build --if-present
+    - ethereumorg092: npm test
+    
